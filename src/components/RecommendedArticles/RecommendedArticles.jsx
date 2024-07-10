@@ -1,16 +1,20 @@
 import React from "react";
 import CharacterPng from "../../assets/characters/character2.png";
-import Game1 from "../../assets/game/game1.jpg";
+import Game4 from "../../assets/game/Teken.jpg"
+import tekenMini from "../../assets/game/tekenMini.jpg"
+import Residentalmini from "../../assets/game/ResidentalMini.png"
+import Codmini from "../../assets/game/Codmini.jpg"
+// import Game1 from "../../assets/game/game1.jpg";
 import Game2 from "../../assets/game/game2.jpg";
 import Game3 from "../../assets/game/game3.jpg";
 
 const game1Cover = {
-  backgroundImage: `url(${Game1})`,
+  backgroundImage: `url(${Game4})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   width: "100%",
-  height: "350px",
+  height: "450px",
 };
 const game2Cover = {
   backgroundImage: `url(${Game2})`,
@@ -53,7 +57,7 @@ const RecommendedArticles = () => {
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
                       <div>
                         <img
-                          src={Game2}
+                          src={tekenMini}
                           alt=""
                           className="h-[140px] min-w-[110px] object-cover rounded-xl"
                         />
@@ -82,7 +86,7 @@ const RecommendedArticles = () => {
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
                       <div>
                         <img
-                          src={Game2}
+                          src={Residentalmini}
                           alt=""
                           className="h-[80px] min-w-[60px] object-cover rounded-xl"
                         />
@@ -105,14 +109,14 @@ const RecommendedArticles = () => {
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
                       <div>
                         <img
-                          src={Game2}
+                          src={Codmini}
                           alt=""
                           className="h-[80px] min-w-[60px] object-cover rounded-xl"
                         />
                       </div>
                       <div>
                         <h1 className="font-semibold text-xl">
-                          Lorem ipsum dolor sit, amet consectetur
+                          CALL OF DUTY MODERN WARFARE
                         </h1>
                       </div>
                     </div>
