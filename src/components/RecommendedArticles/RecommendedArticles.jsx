@@ -1,15 +1,13 @@
 import React from "react";
 import CharacterPng from "../../assets/characters/character2.png";
-import Game4 from "../../assets/game/Teken.jpg"
+import Game1 from "../../assets/game/Teken.jpg"
 import tekenMini from "../../assets/game/tekenMini.jpg"
-import Residentalmini from "../../assets/game/ResidentalMini.png"
 import Codmini from "../../assets/game/Codmini.jpg"
-// import Game1 from "../../assets/game/game1.jpg";
-import Game2 from "../../assets/game/game2.jpg";
+import Game2 from "../../assets/game/game6.jpg";
 import Game3 from "../../assets/game/game3.jpg";
 
 const game1Cover = {
-  backgroundImage: `url(${Game4})`,
+  backgroundImage: `url(${Game1})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -64,13 +62,10 @@ const RecommendedArticles = () => {
                       </div>
                       <div>
                         <h1 className="font-semibold text-xl">
-                          Lorem ipsum dolor sit, amet consectetur adipisicing
-                          elit. Voluptates, quidem! Similique tempora velit{" "}
+                        Tekken 7: Mastering Combos and Strategies for Ultimate Victory{" "}
                         </h1>
                         <p className="text-sm text-white/80">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Lorem ipsum dolor sit amet consectetur
-                          adipisicing elit.
+                        Tekken 7, the latest installment in the legendary fighting game series, has captivated gamers...........
                         </p>
                       </div>
                     </div>
@@ -84,16 +79,10 @@ const RecommendedArticles = () => {
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
-                      <div>
-                        <img
-                          src={Residentalmini}
-                          alt=""
-                          className="h-[80px] min-w-[60px] object-cover rounded-xl"
-                        />
-                      </div>
+                      
                       <div>
                         <h1 className="font-semibold text-xl">
-                          Lorem ipsum dolor sit, amet consectetur
+                          God Of War 
                         </h1>
                       </div>
                     </div>

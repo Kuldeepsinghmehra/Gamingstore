@@ -4,42 +4,46 @@ import CharacterPng1 from "../../assets/characters/character1.png";
 import Game1 from "../../assets/game/game1.jpg";
 import Game2 from "../../assets/game/game2.jpg";
 import Game3 from "../../assets/game/game3.jpg";
+import Game4 from "../../assets/game/game4.jpg";
+import Game5 from "../../assets/game/game5.jpg";
+import Game6 from "../../assets/game/game6.jpg"
+
 
 const GameCardData = [
   {
     id: 1,
-    title: "Game Title",
+    title: "Pubg Battleground",
     image: Game1,
     followers: 30,
   },
   {
     id: 2,
-    title: "Game Title",
+    title: "Resident Evil 4",
     image: Game2,
     followers: 35,
   },
   {
     id: 3,
-    title: "Game Title2",
+    title: "Call Of Duty Modern Warfare",
     image: Game3,
     followers: 35,
   },
   {
     id: 4,
-    title: "Game Title3",
-    image: Game1,
+    title: "Smackdown Vs Raw 2021",
+    image: Game4,
     followers: 35,
   },
   {
     id: 5,
-    title: "Game Title4",
-    image: Game2,
+    title: "Prince Of Persia",
+    image: Game5,
     followers: 35,
   },
   {
     id: 6,
-    title: "Game Title5",
-    image: Game3,
+    title: "God Of War",
+    image: Game6,
     followers: 55,
   },
 ];
@@ -67,7 +71,7 @@ const TrendingGames = () => {
                       alt={item.title}
                       className="w-full h-[200px] object-cover rounded-xl"
                     />
-                    <div className="text-center">
+                    <div className="text-center mt-3">
                       <p>{item.title}</p>
                       <p className="flex items-center justify-center gap-2">
                         <FaFire />

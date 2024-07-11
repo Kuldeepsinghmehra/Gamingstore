@@ -18,7 +18,7 @@ const WhatsNewCard = ({ image, title, description, icon }) => {
               PC
             </div>
             <h1>{title}</h1>
-            <p className="text-sm text-white/70">{description}</p>
+            <p className="text-sm text-white/70 mt-2">{description}</p>
           </div>
         </div>
       </div>

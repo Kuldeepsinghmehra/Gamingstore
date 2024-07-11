@@ -4,9 +4,9 @@ import { IoLogoAndroid } from "react-icons/io";
 import { IoLogoApple } from "react-icons/io";
 import { IoLogoBuffer } from "react-icons/io";
 import { IoLogoDribbble } from "react-icons/io";
-import Game1 from "../../assets/game/game2.jpg";
-import Game2 from "../../assets/game/game1.jpg";
-import Game3 from "../../assets/game/game3.jpg";
+import Game1 from "../../assets/game/WN1.jpg";
+import Game2 from "../../assets/game/Wn2.jpg";
+import Game3 from "../../assets/game/Wn3.jpg";
 import { FaWindows } from "react-icons/fa";
 import WhatsNewCard from "./WhatsNewCard";
 
@@ -14,25 +14,25 @@ const WhatsNewData = [
   {
     image: Game1,
     title:
-      "Game Title 1 Lorem ipsum, dolor sit amet dolor sit amet consectetur",
+      "Assassins Creed",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, doloremque beatae quas officia nihil consequuntur?",
+      "This action-adventure game series immerses players in richly detailed open-world environments, blending historical fiction with engaging stealth gameplay. As a member of the Assassin Brotherhood, uncover hidden secrets, take on powerful enemies, and shape the course of history across various iconic eras. With captivating storytelling and breathtaking visuals, Assassin's Creed offers an unforgettable gaming experience",
     icon: <FaWindows />,
   },
   {
     image: Game2,
     title:
-      "Game Title 2 Lorem dolor sit amet ipsum, dolor sit amet consectetur",
+      "Hitman Agent 47",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, doloremque beatae quas officia nihil consequuntur?",
+      "Step into the shoes of Agent 47, the world's most skilled assassin, in Hitman. This stealth action game series challenges players to execute high-stakes contracts across exotic global locations. With unparalleled freedom to plan and execute missions, use disguises, tools, and creative strategies to eliminate targets. Each level is a sandbox of opportunities, offering multiple paths to achieve your objectives. Hitman delivers a gripping experience filled with precision, strategy, and suspense?",
     icon: <FaWindows />,
   },
   {
     image: Game3,
     title:
-      "Game Title 3 Lorem dolor sit amet ipsum, dolor sit amet consectetur",
+      "Valorant Riot Games",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, doloremque beatae quas officia nihil consequuntur?",
+      "Valorant is a fast-paced, tactical first-person shooter from Riot Games. Set in a near-future world, players engage in intense 5v5 matches, combining precise gunplay with unique agent abilities. Each agent brings their own set of skills to the battlefield, allowing for dynamic team strategies and gameplay. With a focus on competitive integrity and strategic depth, Valorant offers an exhilarating experience for both casual players and esports enthusiasts",
     icon: <FaWindows />,
   },
 ];
@@ -74,8 +74,7 @@ const WhatsNew = () => {
                   Subscribe To Our Newletter
                 </h1>
                 <p className="text-sm text-white/70 line-clamp-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                  omnis
+                Get the latest updates about the new realease and more exciting discounts
                 </p>
                 <input
                   type="email"
