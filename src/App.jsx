@@ -13,7 +13,11 @@ const App = () => {
       <Hero />
       <TrendingGames />
       <RecommendedArticles />
+      <section id="whatsnew">
       <WhatsNew />
+
+      </section>
+    
       <Footer />
     </>
   );

@@ -3,7 +3,15 @@ import Logo from "../../assets/logo.jpg";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
+  const scrollWhatsnew= ()=>{
+    const element =document.getElementById("whatsnew");
+    if(element)
+    {
+      element.scrollIntoView({behavior:"smooth"})
+    }
+  }
   return (
     <>
       <div className="bg-primary ">
@@ -21,9 +29,10 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                  <Link to="/release" className="cursor-pointer">
+                    <a href="#" className="cursor-pointer" onClick={scrollWhatsnew}>
                       New Release
-                    </Link>
+
+                    </a>
                   </li>
                   <li className="relative">
                     <input

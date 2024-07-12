@@ -4,7 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Explore from './components/Routes/Explore.jsx';
-import Release from './components/Routes/Release.jsx';
+
+
 const router=createBrowserRouter(
   [
     {
@@ -15,11 +16,8 @@ const router=createBrowserRouter(
     {
       path:"explore",
       element:<Explore />
-    },
-    {
-      path:"release",
-      element:<Release />
-    }
+    }, 
+  
 
   ]
 )
