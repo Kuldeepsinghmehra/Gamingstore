@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo.jpg";
 import { IoMdSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,20 +10,20 @@ const Navbar = () => {
         <div className="container">
           <div className="flex justify-between items-center">
             <div className="flex gap-8 items-center text-white">
-              <a href="#">
+            <Link to="/">
                 <img src={Logo} alt="Logo" className="w-16" />
-              </a>
+              </Link>
               <div className="hidden sm:block">
                 <ul className="flex gap-6 items-center">
                   <li>
-                    <a href="#" className="cursor-pointer">
+                  <Link to="/explore" className="cursor-pointer">
                       Explore
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="cursor-pointer">
-                     New Release
-                    </a>
+                  <Link to="/release" className="cursor-pointer">
+                      New Release
+                    </Link>
                   </li>
                   <li className="relative">
                     <input
