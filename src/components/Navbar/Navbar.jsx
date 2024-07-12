@@ -21,7 +21,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a href="#" className="cursor-pointer">
-                      Release
+                     New Release
                     </a>
                   </li>
                   <li className="relative">
