@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaHeartbeat } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 import { IoLogoApple } from "react-icons/io";
@@ -38,6 +38,29 @@ const WhatsNewData = [
 ];
 
 const WhatsNew = () => {
+  const [email,setEmail]=useState("");
+  const [message,setMessage]=useState("");
+  const [isModalOpen, setIsModalOpen]=useState(false)
+  const handleEmailChange=(e)=>
+  {
+    setEmail(e.target.value)
+
+  }
+  const handleSubscribe=()=>{
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage("Please enter a valid email address.");
+      setIsModalOpen(true)
+      return;
+    }
+    setMessage("Thank you for subscring")
+    setIsModalOpen(true);
+    setEmail(" ")
+  }
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setMessage("");
+  };
   return (
     <>
       <div className="py-10 bg-primary text-white">
@@ -52,9 +75,6 @@ const WhatsNew = () => {
                 <IoLogoBuffer className="text-xl cursor-pointer" />
                 <IoLogoDribbble className="text-xl cursor-pointer" />
               </div>
-              <button className="bg-gray-400/50 text-white rounded-xl px-4 py-2">
-                Explore
-              </button>
             </div>
           </div>
 
@@ -80,17 +100,31 @@ const WhatsNew = () => {
                   type="email"
                   name="email"
                   id="email"
+                  onChange={handleEmailChange}
                   className="bg-gray-400/20 px-4 py-2 rounded-lg w-full"
                   placeholder="Enter Your Email"
                 />
-                <button className="bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-xl px-4 py-2">
+                <button className="bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-xl px-4 py-2"
+                onClick={handleSubscribe}>
                   Subscribe
                 </button>
+                {message && <p className="mt-2 text-sm text-green-400">{message}</p>}
               </div>
             </div>
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm mx-auto">
+            <h2 className="text-xl font-semibold mb-4">{message}</h2>
+            <button onClick={closeModal} className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
     </>
   );
 };

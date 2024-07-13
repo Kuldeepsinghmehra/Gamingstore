@@ -1,6 +1,7 @@
 import React from "react";
 import CoverImg from "../../assets/hero/hero_cover.jpg";
 import HeroImg from "../../assets/hero/hero.jpg";
+import { useNavigate } from 'react-router-dom';
 
 
 const bgImage = {
@@ -13,6 +14,12 @@ const bgImage = {
 };
 
 const Hero = () => {
+  const navigate=useNavigate();
+  const handleExplore=()=>
+  {
+    navigate("/explore");
+
+  }
   return (
     <>
       <div style={bgImage} className="min-h-[550px] w-full overflow-hidden ">
@@ -27,7 +34,8 @@ const Hero = () => {
                 <h1 className="text-5xl font-bold text-white transform transition-transform duration-300 hover:scale-110 ">
                 Level Up Your PC Gaming Experience
                 </h1>
-                <button className="mt-8 bg-gradient-to-r from-blue-500 to-blue-800 inline-block px-6 py-3 rounded-2xl font-semibold text-white">
+                <button className="mt-8 bg-gradient-to-r from-blue-500 to-blue-800 inline-block px-6 py-3 rounded-2xl font-semibold text-white "
+                onClick={handleExplore}>
                   Start Exploring
                 </button>
               </div>

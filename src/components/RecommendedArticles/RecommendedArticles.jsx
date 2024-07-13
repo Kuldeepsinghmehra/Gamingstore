@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CharacterPng from "../../assets/characters/character2.png";
 import Game1 from "../../assets/game/Teken.jpg"
 import tekenMini from "../../assets/game/tekenMini.jpg"
@@ -46,8 +47,9 @@ const RecommendedArticles = () => {
           {/* Recommended Articles Card section */}
           <div className="relative z-10">
             <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-3 sm:grid-rows-2 gap-4 mt-8">
-              <div
-                style={game1Cover}
+              <Link 
+              to="/Teken"
+               style={game1Cover}
                 className="row-span-1 sm:row-span-2 sm:col-span-2 bg-red-400 h-[350px] rounded-xl relative"
               >
                 <div className="bg-black/20 h-full w-full">
@@ -71,11 +73,14 @@ const RecommendedArticles = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                style={game2Cover}
-                className="sm:row-span-1 bg-orange-400 rounded-xl relative"
-              >
+                </Link>
+             
+             <Link 
+             to="Godofwar"
+              style={game2Cover}
+              className="sm:row-span-1 bg-orange-400 rounded-xl relative"
+             
+             >
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
@@ -88,11 +93,16 @@ const RecommendedArticles = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                style={game3Cover}
+                </Link>
+                <Link
+                to="Cod"
+                 style={game3Cover}
                 className="sm:row-span-1 bg-blue-500 rounded-xl relative"
-              >
+                
+                >
+                
+               
+              
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
@@ -111,7 +121,7 @@ const RecommendedArticles = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+                </Link>
             </div>
           </div>
 
