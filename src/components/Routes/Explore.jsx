@@ -10,35 +10,41 @@ const GameCardData = [
     id: 1,
     title: "Counter Strike",
     image: Game1,
+    price:400 
   },
   {
     id: 2,
     title: "Valorant",
     image: Game2,
+    price:450
   
   },
   {
     id: 3,
     title: "Call Of Duty Warzone",
     image: Game3,
+    price:500
   
   },
   {
     id: 4,
     title: "Spiderman",
     image: Game4,
+    price:500
    
   },
   {
     id: 5,
     title: "Ufc",
     image: Game5,
+    price:450
    
   },
   {
     id: 6,
     title: "WWWE 2K23",
     image: Game6,
+    price:450
     
   },
  
@@ -61,7 +67,7 @@ export const Explore = () => {
               />
               <div className="p-4 text-center">
                 <p className="text-lg font-semibold">{item.title}</p>
-                
+                <p className="text-lg font-semibold">₹ {item.price}</p>
                 <button className="bg-blue-500 text-white mt-2 px-4 py-2 rounded-full">
                   Purchase
                 </button>
