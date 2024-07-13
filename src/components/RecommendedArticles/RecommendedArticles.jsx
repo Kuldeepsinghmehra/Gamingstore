@@ -40,9 +40,6 @@ const RecommendedArticles = () => {
           {/* Header section */}
           <div className="flex justify-between">
             <h1 className="text-3xl font-bold">Recommended Articles</h1>
-            <button className="bg-gray-400/50 text-white rounded-xl px-4 py-2">
-              View All
-            </button>
           </div>
           {/* Recommended Articles Card section */}
           <div className="relative z-10">

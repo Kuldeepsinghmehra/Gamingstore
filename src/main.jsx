@@ -7,8 +7,6 @@ import Explore from './components/Routes/Explore.jsx';
 import Article1 from './components/Routes/Article1.jsx';
 import Article2 from './components/Routes/Article2.jsx';
 import Article3 from './components/Routes/Article3.jsx';
-
-
 const router=createBrowserRouter(
   [
     {
