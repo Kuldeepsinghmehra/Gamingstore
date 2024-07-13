@@ -53,7 +53,7 @@ const WhatsNew = () => {
       setIsModalOpen(true)
       return;
     }
-    setMessage("Thank you for subscring")
+    setMessage("Thank you for Subscribing")
     setIsModalOpen(true);
     setEmail(" ")
   }
