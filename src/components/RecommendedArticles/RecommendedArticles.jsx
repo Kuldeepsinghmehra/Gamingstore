@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CharacterPng from "../../assets/characters/character2.png";
-import Game1 from "../../assets/game/Teken.jpg"
-import tekenMini from "../../assets/game/tekenMini.jpg"
-import Codmini from "../../assets/game/Codmini.jpg"
+import Game1 from "../../assets/game/Teken.jpg";
+import tekenMini from "../../assets/game/tekenMini.jpg";
+import Codmini from "../../assets/game/Codmini.jpg";
 import Game2 from "../../assets/game/game6.jpg";
 import Game3 from "../../assets/game/game3.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginModal from "./LoginModal"; 
 
 const game1Cover = {
   backgroundImage: `url(${Game1})`,
@@ -33,6 +35,20 @@ const game3Cover = {
 };
 
 const RecommendedArticles = () => {
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleLinkClick = (e) => {
+    if (!isAuthenticated) {
+      e.preventDefault();
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <section className="py-10 bg-primary text-white w-full overflow-hidden">
@@ -45,9 +61,10 @@ const RecommendedArticles = () => {
           <div className="relative z-10">
             <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-3 sm:grid-rows-2 gap-4 mt-8">
               <Link 
-              to="/Teken"
-               style={game1Cover}
+                to="/Teken"
+                style={game1Cover}
                 className="row-span-1 sm:row-span-2 sm:col-span-2 bg-red-400 h-[350px] rounded-xl relative"
+                onClick={handleLinkClick}
               >
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
@@ -61,27 +78,26 @@ const RecommendedArticles = () => {
                       </div>
                       <div>
                         <h1 className="font-semibold text-xl">
-                        Tekken 7: Mastering Combos and Strategies for Ultimate Victory{" "}
+                          Tekken 7: Mastering Combos and Strategies for Ultimate Victory{" "}
                         </h1>
                         <p className="text-sm text-white/80">
-                        Tekken 7, the latest installment in the legendary fighting game series, has captivated gamers...........
+                          Tekken 7, the latest installment in the legendary fighting game series, has captivated gamers...........
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                </Link>
+              </Link>
              
-             <Link 
-             to="Godofwar"
-              style={game2Cover}
-              className="sm:row-span-1 bg-orange-400 rounded-xl relative"
-             
-             >
+              <Link 
+                to="Godofwar"
+                style={game2Cover}
+                className="sm:row-span-1 bg-orange-400 rounded-xl relative"
+                onClick={handleLinkClick}
+              >
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
-                      
                       <div>
                         <h1 className="font-semibold text-xl">
                           God Of War 
@@ -90,16 +106,13 @@ const RecommendedArticles = () => {
                     </div>
                   </div>
                 </div>
-                </Link>
-                <Link
+              </Link>
+              <Link
                 to="Cod"
-                 style={game3Cover}
+                style={game3Cover}
                 className="sm:row-span-1 bg-blue-500 rounded-xl relative"
-                
-                >
-                
-               
-              
+                onClick={handleLinkClick}
+              >
                 <div className="bg-black/20 h-full w-full">
                   <div className="absolute bottom-0 left-0 w-full">
                     <div className="flex justify-center items-center gap-4 bg-gradient-to-t from-primary to-transparent">
@@ -118,7 +131,7 @@ const RecommendedArticles = () => {
                     </div>
                   </div>
                 </div>
-                </Link>
+              </Link>
             </div>
           </div>
 
@@ -130,6 +143,11 @@ const RecommendedArticles = () => {
           />
         </div>
       </section>
+      <LoginModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onLogin={loginWithRedirect}
+      />
     </>
   );
 };
