@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/logo.jpg";
-import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollWhatsnew = () => {
     const element = document.getElementById("whatsnew");
@@ -26,30 +26,22 @@ const Navbar = () => {
               <div className="hidden sm:block">
                 <ul className="flex gap-6 items-center">
                   <li>
-                    <Link to="/explore" className="cursor-pointer">
+                    <Link to="/explore" className="cursor-pointer hover:text-red-500">
                       Explore
                     </Link>
                   </li>
                   <li>
-                    <a href="#" className="cursor-pointer" onClick={scrollWhatsnew}>
+                    <a href="#" className="cursor-pointer hover:text-red-500" onClick={scrollWhatsnew}>
                       New Release
                     </a>
-                  </li>
-                  <li className="relative">
-                    <input
-                      type="search"
-                      name="search"
-                      id="search"
-                      placeholder="Search games.."
-                      className="bg-gray-700/50 px-4 py-2 rounded-2xl"
-                    />
-                    <IoMdSearch className="absolute top-1/2 -translate-y-1/2 right-3" />
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="text-white">
-              <ul className="flex gap-4 items-center">
+
+            <div className="flex items-center">
+              {/* Desktop View */}
+              <ul className="hidden sm:flex text-white gap-4 items-center">
                 {isAuthenticated ? (
                   <>
                     <li className="flex items-center gap-2">
@@ -70,7 +62,7 @@ const Navbar = () => {
                     <li>
                       <button
                         onClick={() => loginWithRedirect()}
-                        className="bg-gray-700 inline-block px-6 py-3 rounded-2xl font-semibold"
+                        className="bg-gray-700 inline-block px-4 py-2 rounded-2xl font-semibold"
                       >
                         Login
                       </button>
@@ -78,7 +70,7 @@ const Navbar = () => {
                     <li>
                       <button
                         onClick={() => loginWithRedirect()}
-                        className="bg-gradient-to-r from-blue-500 to-blue-700 inline-block px-6 py-3 rounded-2xl font-semibold"
+                        className="bg-gradient-to-r from-blue-500 to-blue-700 inline-block px-4 py-2 rounded-2xl font-semibold"
                       >
                         Sign Up
                       </button>
@@ -86,9 +78,73 @@ const Navbar = () => {
                   </>
                 )}
               </ul>
+
+              {/* Hamburger Icon for Mobile */}
+              <button
+                className="block sm:hidden p-2 text-white focus:outline-none"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu with Login/Logout */}
+        {menuOpen && (
+          <div className="absolute top-14 right-4 bg-primary rounded-lg shadow-lg p-4 sm:hidden">
+            <ul className="flex flex-col gap-4 items-center text-white">
+              {isAuthenticated ? (
+                <>
+                  <li className="flex items-center gap-2">
+                    <img src={user.picture} alt={user.name} className="w-8 h-8 rounded-full" />
+                    <span>{user.name}</span>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => logout({ returnTo: window.location.origin })}
+                      className="bg-gray-700 inline-block px-6 py-3 rounded-2xl font-semibold"
+                    >
+                      Log Out
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <button
+                      onClick={() => loginWithRedirect()}
+                      className="bg-gray-700 inline-block px-4 py-2 rounded-2xl font-semibold"
+                    >
+                      Login
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => loginWithRedirect()}
+                      className="bg-gradient-to-r from-blue-500 to-blue-700 inline-block px-4 py-2 rounded-2xl font-semibold"
+                    >
+                      Sign Up
+                    </button>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );
