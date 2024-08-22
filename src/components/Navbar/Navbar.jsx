@@ -26,12 +26,19 @@ const Navbar = () => {
               <div className="hidden sm:block">
                 <ul className="flex gap-6 items-center">
                   <li>
-                    <Link to="/explore" className="cursor-pointer hover:text-red-500">
+                    <Link
+                      to="/explore"
+                      className="cursor-pointer hover:text-red-500 md:hover:text-red-500"
+                    >
                       Explore
                     </Link>
                   </li>
                   <li>
-                    <a href="#" className="cursor-pointer hover:text-red-500" onClick={scrollWhatsnew}>
+                    <a
+                      href="#"
+                      className="cursor-pointer hover:text-red-500 md:hover:text-red-500"
+                      onClick={scrollWhatsnew}
+                    >
                       New Release
                     </a>
                   </li>
@@ -105,7 +112,7 @@ const Navbar = () => {
 
         {/* Mobile Menu with Login/Logout */}
         {menuOpen && (
-          <div className="absolute top-14 right-4 bg-primary rounded-lg shadow-lg p-4 sm:hidden">
+          <div className="fixed inset-0 top-16 bg-primary p-4 z-50 sm:hidden">
             <ul className="flex flex-col gap-4 items-center text-white">
               {isAuthenticated ? (
                 <>

@@ -31,9 +31,9 @@ const Hero = () => {
                 <p className="text-lg text-blue-500 font-semibold">
                   Discover Games You will Love
                 </p>
-                <h1 className="text-5xl font-bold text-white transform transition-transform duration-300 hover:scale-110 ">
-                Level Up Your PC Gaming Experience
-                </h1>
+                <h1 className="text-5xl font-bold text-white transform transition-transform duration-300 hover:scale-110 sm:hover:scale-110">
+  Level Up Your PC Gaming Experience
+</h1>
                 <button className="mt-8 bg-gradient-to-r from-blue-500 to-blue-800 inline-block px-6 py-3 rounded-2xl font-semibold text-white "
                 onClick={handleExplore}>
                   Start Exploring
