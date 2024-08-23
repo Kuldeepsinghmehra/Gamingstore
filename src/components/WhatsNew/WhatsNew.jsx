@@ -9,6 +9,7 @@ import Game2 from "../../assets/game/Wn2.jpg";
 import Game3 from "../../assets/game/Wn3.jpg";
 import { FaWindows } from "react-icons/fa";
 import WhatsNewCard from "./WhatsNewCard";
+import emailjs from 'emailjs-com';
 
 const WhatsNewData = [
   {
@@ -53,9 +54,25 @@ const WhatsNew = () => {
       setIsModalOpen(true)
       return;
     }
-    setMessage("Thank you for Subscribing")
-    setIsModalOpen(true);
-    setEmail(" ")
+    const templateParams={
+      to_name:"Subscriber",
+      to_email: email,
+      from_name: "Kuldeep Singh Mehra", 
+      message: "You have sucessfully!",
+    }
+    emailjs.send('service_s6o4vay','template_m56zjfh',templateParams,'HDeN_1DAZ0CkMPHTQ').then((response)=>{
+      console.log("email sent succesfully",response.status,response.text);
+      setMessage("You have successfully subscribed to the email");
+      setIsModalOpen(true);
+      setEmail(" ");
+    })
+    .catch((error)=>{
+      console.error("Failed to send email",error);
+      setMessage("There was and error, please try after some other time");
+      setIsModalOpen(true);
+
+    });
+  
   }
   const closeModal = () => {
     setIsModalOpen(false);
