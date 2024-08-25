@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Game1 from "../../assets/Explore/game1.webp";
 import Game2 from "../../assets/Explore/game2.webp";
 import Game3 from "../../assets/Explore/game3.avif";
@@ -50,6 +50,16 @@ const GameCardData = [
  
 ];
 export const Explore = () => {
+  const [showModal,setShowModal]=useState("");
+
+  function handlePurchase()
+  {
+    setShowModal(true);
+  }
+  function closeModal()
+  {
+    setShowModal(false);
+  }
   return(
     <>
       <section className="py-10 bg-gray-900 text-white">
@@ -68,7 +78,7 @@ export const Explore = () => {
               <div className="p-4 text-center">
                 <p className="text-lg font-semibold">{item.title}</p>
                 <p className="text-lg font-semibold">₹ {item.price}</p>
-                <button className="bg-blue-500 text-white mt-2 px-4 py-2 rounded-full">
+                <button className="bg-blue-500 text-white mt-2 px-4 py-2 rounded-full" onClick={handlePurchase}>
                   Purchase
                 </button>
               </div>
@@ -77,6 +87,14 @@ export const Explore = () => {
         </div>
       </div>
     </section>
+    {showModal && (<div className='fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50'>
+      <div className='bg-white rounded-lg shadow-lg max-w-sm w-full p-6 text-center '>
+     
+      <h2 className='text-2xl font-bold mb-4'>Under Construction</h2>
+      <p className='text-gray-700 mb-6'>This feature is currently under construction</p>
+      <button className='bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300' onClick={closeModal}>Close</button>
+      </div>
+    </div>)}
 
     </>
   )
